@@ -697,6 +697,7 @@ prt_in,227,45,0	script	Archeologist#sign	804,{
 			mes "but I'm happy enough to confirm that the Sign really exists. Thanks again, and I hope you stop by and chat from time to time.";
 			set sign_q,142;
 			getexp (checkre(3))?200000:2000000,0;
+			getitem 41032,1;
 		}
 		else {
 			mes "Have you visited";
@@ -3095,7 +3096,7 @@ OnTouch_:
 
 prt_maze02,25,161,0	script	#music	-1,7,7,{
 OnTouch_:
-	soundeffect "effect\\¼®¾çÀÇ ¾î½Ø½Å.wav",1;
+	soundeffect "effect\\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ø½ï¿½.wav",1;
 	end;
 }
 

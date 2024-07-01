@@ -1,0 +1,9 @@
+prontera,154,172,5	script	Test Kaiyou	1_F_MARIA,{
+	if(vip_status(1))
+		bonus_script "{}",(vip_status(2)-gettimetick(2)),8,0,EFST_VIPSTATE;
+}
+
+
+prontera,153,171,5	script	Test Kaiyou2	1_F_MARIA,{
+	searchstores 10,1;
+}

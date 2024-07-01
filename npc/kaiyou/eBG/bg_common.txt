@@ -1,0 +1,308 @@
+//===== rAthena Script ======================================= 
+//= BattleGround System - Common NPCs
+//===== By: ================================================== 
+//= ????, L0ne_W0lf
+//===== Current Version: ===================================== 
+//= 1.5
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= [Official Conversion]
+//= Battleground NPCs:
+//= - Generals and Aides
+//= - Battleground Warper
+//= - Kafra and Repairman.
+//= - GM Management NPC
+//= - Badge Exchanger (Tierra and Flavius)
+//===== Additional Comments: ================================= 
+//= 1.0 First Version.
+//= 1.1 Updated several NPCs to Official.
+//= 1.2 Updated Repairman NPC
+//= 1.3 Optimized "Erundek" NPC. [Euphy]
+//= 1.4 Added GM management function. [Euphy]
+//= 1.5 Added VIP features and created a reward function. [Euphy]
+//============================================================
+
+
+
+// Badge Reward Function
+//============================================================
+function	script	F_BG_Badge	{
+	.@team$ = getarg(1);
+	.@bg_type$ = getarg(2);
+	set .@amount_win,6*getarg(3);
+	set .@amount_lose,4*getarg(3);
+	if (VIP_SCRIPT && vip_status(VIP_STATUS_ACTIVE))
+	{
+		set .@amount_win,7*getarg(3);
+		set .@amount_lose,5*getarg(3);
+	}
+
+	if( $@HappyHour == 1 )
+		set .@amount, .@amount * $@HHrate/100;
+
+	if (.@bg_type$ == "CTF")
+		set .@ranking$,"ctf_";
+	else if (.@bg_type$ == "TD")
+		set .@ranking$,"td_";
+	else if (.@bg_type$ == "CQ")
+		set .@ranking$,"cq_";
+	else if (.@bg_type$ == "RS")
+		set .@ranking$,"ru_";
+	else if (.@bg_type$ == "EOS")
+		set .@ranking$,"eos_";
+	else if (.@bg_type$ == "DOM")
+		set .@ranking$,"dom_";
+	else if (.@bg_type$ == "SC")
+		set .@ranking$,"sc_";
+	else
+		return;
+
+	if (getarg(0) == 1) {
+		set .@amount, .@amount_win;
+		set .@stat$,"win";
+		set .@s$,"s";
+		set .@points,15;
+		if (.@team$ == "Guillaume") {
+			mes "[Axl Rose]";
+			mes "Hola miembro de Guillaume!";
+		} else if (.@team$ == "Croix") {
+			mes "[Swandery]";
+			mes "Hola miembro de Croix!";
+		}
+		mes "Disfruta tu gloriosa victoria!";
+		mes strcharinfo(0)+", ten tu recompensa bien merecida.";
+	} else if (getarg(0) == 0) {
+		set .@amount, .@amount_lose;
+		set .@stat$,"lost";
+		set .@s$,"";
+		set .@points,5;
+		if (.@team$ == "Guillaume") {
+			mes "[Axl Rose]";
+			mes "Perdiste, pero de seguro lo diste todo en la batalla.";
+			mes "Esta recompensa es por tu gran dedicación!";
+			mes "Toma esta derrota como una lección y la próxima de seguro será una victoria!";
+		} else if (.@team$ == "Croix") {
+			mes "[Swandery]";
+			mes "Oh, "+strcharinfo(0)+" no estes triste.";
+			mes "Aunque no ganaste, de seguro diste lo mejor.";
+			mes "Ten esta recompensa, y por favor, no olvides esta batalla, de seguro la próxima ganaras.";
+		}
+	} else
+	{
+		set .@amount, .@amount_lose;
+		set .@stat$,"tie";
+		set .@s$,"";
+		set .@points,8;
+		if (.@team$ == "Guillaume") {
+			mes "[Axl Rose]";
+			mes "Empataste, pero de seguro lo diste todo en la batalla.";
+			mes "Esta recompensa es por tu gran dedicación!";
+			mes "Toma este empate como una lección y la próxima de seguro será una victoria!";
+		} else if (.@team$ == "Croix") {
+			mes "[Swandery]";
+			mes "Oh, "+strcharinfo(0)+" no estes triste.";
+			mes "Aunque no ganaste, de seguro diste lo mejor.";
+			mes "Ten esta recompensa, y por favor, no olvides esta batalla, de seguro la próxima ganaras.";
+		}
+	}
+	close2;
+	set .@medal_gap, 10000 - get_reputation_points(4);
+	if (.@medal_gap >= .@amount)
+	{
+		add_reputation_points(4,.@amount);
+		message strcharinfo(0), "Battleground: Acabas de ganar "+ .@amount +" puntos.";
+	}
+	else
+	{
+		add_reputation_points(4,.@medal_gap);
+		message strcharinfo(0), "Battleground: Acabas de ganar "+ .@medal_gap +" puntos.";
+	}
+	
+	bg_rankpoints .@ranking$+""+.@stat$+""+.@s$,1,.@points;
+	bg_rankpoints .@stat$,1,0;
+	return;
+}
+
+
+
+batt_off,119,103,5	script	Encargado Battleground	4_M_CRU_CRUA,{
+	set .@name$,"[^0000ffEncargado Battleground^000000]";
+	mes .@name$;
+	if ( getgmlevel() < 60) 
+	{
+		mes "Ya sabes que debes seguir participando en Battleground, si tienes problemas para conectarte con alguien en tu casa, habla con tu GM.";
+		close;
+	}
+	mes "Qué deseas hacer?";
+	next;
+	switch( select("Desactivar HH:Activar HH:Activar Super HH:Ver lista DobleLogin:Agregar a la lista") )
+	{
+		case 1:
+			mes .@name$;
+			mes "Cierra esta ventana para desactivarlo.";
+			close2;
+			set $@HappyHour, 0;
+			set $@HHrate, 100;
+			dispbottom "Desactivado HappyHour.";
+			end;
+		case 2:
+			mes .@name$;
+			mes "Seguro que deseas activar HH en Battleground?";
+			next;
+			switch(select("No:Activar sin Broad:Activar con Broad"))
+			{
+				case 1:
+					mes .@name$;
+					mes "Entendido";
+					close;
+				case 2:
+					mes .@name$;
+					mes "Cierra esta ventana para Activarlo.";
+					close2;
+					set $@HappyHour, 1;
+					set $@HHrate, 160;
+					dispbottom "Activado HappyHour.";
+					end;
+				case 3:
+					mes .@name$;
+					mes "Cierra esta ventana para Activarlo.";
+					close2;
+					set $@HappyHour, 1;
+					set $@HHrate, 160;
+					announce "-- Battleground Happy Hour ha iniciado --",0,0x00FF00;
+					end;
+			}
+			end;
+		case 3:
+			mes .@name$;
+			mes "Seguro que deseas activar Super HH en Battleground?";
+			next;
+			switch(select("No:Activar sin Broad:Activar con Broad"))
+			{
+				case 1:
+					mes .@name$;
+					mes "Entendido";
+					close;
+				case 2:
+					mes .@name$;
+					mes "Cierra esta ventana para Activarlo.";
+					close2;
+					set $@HappyHour, 1;
+					set $@HHrate, 180;
+					dispbottom "Activado Super HappyHour.";
+					end;
+				case 3:
+					mes .@name$;
+					mes "Cierra esta ventana para Activarlo.";
+					close2;
+					set $@HappyHour, 1;
+					set $@HHrate, 180;
+					announce "-- Battleground SUPER HAPPY HOUR ha empezado --",0,0x00FF00;
+					end;
+			}
+			end;
+		case 4:
+			mes .@name$;
+			mes "Las personas que tienen permitido hacer doble loguin en bg son:";
+			for ( set .@i , 0 ; .@i < getarraysize($BGDOBLELOGIN) ; set .@i , .@i + 1 )
+			{
+				mes "Account ID#"+$BGDOBLELOGIN[.@i];
+				if( .@i%10 == 0 && .@i != 0 )
+				{
+					next;
+					mes .@name$;
+				}
+			}
+			close;
+		case 5:
+			mes .@name$;
+			mes "Ingresa el ID de la cuenta";
+			next;
+			input .@id;
+			if( .@id < 2000000 || .@id > 3000000)
+			{
+				mes .@name$;
+				mes "Ingresa una ID válida";
+				close;
+			}
+			for ( set .@i , 0 ; .@i < getarraysize($BGDOBLELOGIN) ; set .@i , .@i + 1 )
+				if( .@id == $BGDOBLELOGIN[.@i] )
+				{
+					set .@exist,1;
+					break;
+				}
+			if( .@exist )
+			{
+				mes .@name$;
+				mes "Esa id ya está registrada, deseas eliminarla?";
+				next;
+				if(select("No:Eliminar")== 1)
+				{
+					mes .@name$;
+					mes "Ok, dejaré todo como está.";
+					close;
+				}
+				mes .@name$;
+				mes "ID eliminada";
+				set $BGDOBLELOGIN[.@i],0;
+				while( $BGDOBLELOGIN[.@i+1] != 0 )
+				{
+					set $BGDOBLELOGIN[.@i],$BGDOBLELOGIN[.@i+1];
+					set .@i,.@i+1;
+				}
+				set $BGDOBLELOGIN[ .@i ], 0;
+				close;
+			}
+			set $BGDOBLELOGIN[ getarraysize($BGDOBLELOGIN) ], .@id;
+			mes .@name$;
+			mes "Se ha ingresado el ID#"+.@id;
+			close;
+	}
+	close;
+
+OnDoHappyHour:
+OnClock2201:
+	if( agitcheck() || agitcheck2() || $@HappyHour == 1 )	end;
+	set $@HappyHour, 1;
+	set $@HHrate, 160;
+	announce "-- Battleground Happy Hour ha empezado --",0,0x00FF00;
+	end;
+OnEndHappyHour:
+OnClock2401:
+	if( agitcheck() || agitcheck2() || $@HappyHour == 0 )	end;
+	set $@HappyHour, 0;
+	set $@HHrate, 100;
+	announce "-- Battleground Happy Hour ha terminado --",0,0x00FF00;
+	end;
+
+OnInit:
+	set $@HappyHour, 0;
+	set $@HHrate, 160;
+	set $@BG_COLOR, 0x6FA8DC;
+	// Battleground Rank Points
+	$@skulls =				1;
+	$@eos_flags =			5;
+	$@sc_stole =			1;
+	$@sc_captured =			5;
+	$@ctf_taken =			1;
+	$@ctf_captured =		15;
+	$@eos_bases =			10;
+	$@dom_bases =			10;
+	end;
+}
+
+-	script	Base Flag#bg	FAKE_NPC,{ end; }
+
+-	script	Battleground_Therapist	FAKE_NPC,{
+	percentheal 100,100;
+	setpcblock(PCBLOCK_SKILL|PCBLOCK_USEITEM,false);
+	repairall;
+	sc_end SC_BERSERK;
+	sc_end SC_STRIPWEAPON;
+	sc_end SC_STRIPSHIELD;
+	sc_end SC_STRIPARMOR;
+	sc_end SC_STRIPHELM;
+	specialeffect2 EF_HEAL;
+	end;
+}

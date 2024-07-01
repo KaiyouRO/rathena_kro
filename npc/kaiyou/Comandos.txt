@@ -1,0 +1,181 @@
+prontera,150,193,5	script	Configuraciones::menu_vip	641,{
+	set .@name$,"^000077Configuraciones^000000";
+	mes .@name$;
+	mes "Soy el encargado de revisar los comandos que se activan cuando te conectas.";
+	mes "¿Qué deseas hacer?";
+	while(1)
+	{
+		switch(select(
+					" [ ^BA4A00JUGAR^000000 ] Roulette",
+					( #AUTOLOOT )?" [ ^10B2D2"+#AUTOLOOT+"%^000000 ] Autoloot":" [ ^ff1919OFF^000000 ] Autoloot",
+					( #SHOWEXP )?" [ ^10B2D2ON^000000 ] Show exp":" [ ^ff1919OFF^000000 ] Show exp",
+					( #NOASK )?" [ ^10B2D2ON^000000 ] No ask":" [ ^ff1919OFF^000000 ] No ask",
+					( #NOKS )?" [ ^10B2D2ON^000000 ] No KS":" [ ^ff1919OFF^000000 ] No KS",
+					( #LISTENBG )?" [ ^10B2D2ON^000000 ] Escuchar BG":" [ ^ff1919OFF^000000 ] Escuchar BG",
+					( #Efectos_Acc )?" [ ^10B2D2OFF^000000 ] Efectos Healer y Warper":" [ ^ff1919ON^000000 ] Efectos Healer y Warper",
+					( #ICONVIP )?" [ ^10B2D2OFF^000000 ] Activar icono VIP":" [ ^ff1919ON^000000 ] Desactivar icono VIP"
+					))
+		{
+			next;
+			case 1:
+				mes .@name$;
+				mes "Cierra esta ventana para continuar.";
+				close2;
+				open_roulette;
+				end;
+			case 2:
+				mes .@name$;
+				mes "Introduce un porcentaje";
+				mes "( 0 - 100 )";
+				next;
+				input .@AUTOLOO;
+				if(.@AUTOLOO < 0 || .@AUTOLOO > 100){
+					message strcharinfo(0), "[ KaiyouRO] El valor debe ser entre 0 y 100";
+					break;
+				}
+				if( .@AUTOLOO == 0 )
+					message strcharinfo(0), "[ KaiyouRO] Autoloot desactivado";
+				else
+					message strcharinfo(0), "[ KaiyouRO] Autoloot automático ajustado a "+.@AUTOLOO+"%";
+					
+				set #AUTOLOOT, .@AUTOLOO;
+				atcommand "@autoloot "+#AUTOLOOT;
+				break;
+			case 3:
+				if(#SHOWEXP == 1){
+					message strcharinfo(0), "[ KaiyouRO] Mostrar experiencia desactivado";
+					set #SHOWEXP, 0;
+				} else {
+					message strcharinfo(0), "[ KaiyouRO] Mostrar experiencia activado";
+					set #SHOWEXP, 1;
+				}
+				atcommand "@showexp";
+				break;
+			case 4:
+				if(#NOASK == 1){
+					message strcharinfo(0), "[ KaiyouRO] No molestar desactivado";
+					set #NOASK, 0;
+				} else {
+					message strcharinfo(0), "[ KaiyouRO] No molestar activado";
+					set #NOASK, 1;
+				}
+				atcommand "@noask";
+				break;
+			case 5:
+				if(#NOKS == 1){
+					message strcharinfo(0), "[ KaiyouRO] No KS desactivado";
+					set #NOKS, 0;
+				} else {
+					message strcharinfo(0), "[ KaiyouRO] No KS activado";
+					set #NOKS, 1;
+				}
+				atcommand "@noks";
+				break;
+			case 6:
+				if(#LISTENBG == 1){
+					message strcharinfo(0), "[ KaiyouRO] Escuchar Battleground anuncios desactivado";
+					set #LISTENBG, 0;
+				} else {
+					message strcharinfo(0), "[ KaiyouRO] Escuchar Battleground anuncios activado";
+					set #LISTENBG, 1;
+				}
+				atcommand "@listenbg";
+				break;
+			case 7:
+				if(#Efectos_Acc == 1){
+					message strcharinfo(0), "[ KaiyouRO] Los efectos han sido activados";
+					set #Efectos_Acc, 0;
+				} else {
+					message strcharinfo(0), "[ KaiyouRO] Los efectos han sido desactivados";
+					set #Efectos_Acc, 1;
+				}
+				break;
+			case 8:
+				if(#ICONVIP == 1){
+					message strcharinfo(0), "[ KaiyouRO] El ícono ha sido activado";
+					set #ICONVIP, 0;
+				} else {
+					message strcharinfo(0), "[ KaiyouRO] El ícono ha sido desactivados";
+					set #ICONVIP, 1;
+				}
+				break;
+		}
+	}
+
+	end;
+
+OnComandos:
+OnWhisperGlobal:
+OnPCLoginEvent:
+	if(#AUTOLOOT != 0)
+		atcommand "@autoloot "+#AUTOLOOT;
+	if(#SHOWEXP == 1)
+		atcommand "@showexp";
+	if(#NOASK == 1)
+		atcommand "@noask";
+	if(#NOKS == 1)
+		atcommand "@noks";
+	if(#LISTENBG == 1)
+		atcommand "@listenbg";
+	if(vip_status(1) && !#ICONVIP)
+		bonus_script "{}",(vip_status(2)-gettimetick(2)),8,0,EFST_VIPSTATE;
+	end;
+}
+
+// How to use?
+// @giveitem <itemid> <amount> <area|map|all>
+
+-	script	atcmd_giveitem	-1,{
+function F_GiveItem;
+OnInit:
+	// Ignore players who are vending?
+	.novend = true;
+	
+	// Ignore players who are in pubs/chatroom? 
+	.nopub = true;
+	
+	// Ignore idle players? if yes, set how many seconds/min/hours to be considered as idle?
+	// sec * min * hour
+	// Default : 5 mins
+	.idle_time = 60 * 5; 
+	
+	bindatcmd "giveitem",strnpcinfo(0)+"::OnGiveItem",60,99;
+	end;
+	
+OnGiveItem:
+	.@flag$ = .@atcmd_parameters$[2];
+	.@area = getbattleflag("area_size");
+	$@itemid_var = atoi( .@atcmd_parameters$[0] );
+	$@amt_var = atoi( .@atcmd_parameters$[1] );
+	if ( getitemname($@itemid_var) == "null" ) { 
+		message strcharinfo(0), "@giveitem failed";
+		dispbottom "Invalid item id.", 0xff0000;
+	}
+	getmapxy(@map$, @x, @y, BL_PC);
+	if ( .@atcmd_numparameters < 3 ) {
+		message strcharinfo(0), "@giveitem failed";
+		dispbottom "Lacking parameter. Requires 3 parameters.", 0xff0000;
+		dispbottom "@giveitem <itemid> <amount> < area | map | all>", 0xff0000;
+		end;
+	}
+	if ( .@flag$ == "area" ) {
+		addrid(4,0,@x+.@area, @y+.@area, @x-.@area, @y-.@area);
+		F_GiveItem;
+	} else if ( .@flag$ == "map" ) {
+		addrid(1);
+		F_GiveItem;
+	} else if ( .@flag$ == "all" ) {
+		addrid(0);
+		F_GiveItem;
+	} else {
+		message strcharinfo(0), "@giveitem failed";
+		dispbottom "'"+ .@flag$ +"' parameter is invalid or non-existent.", 0xff0000;
+	}
+	end;
+	
+	function	F_GiveItem	{
+		if ( checkvending() && .novend || checkchatting() && .nopub || checkidle() > .idle_time ) end;
+		getitem $@itemid_var, $@amt_var;
+		return;
+	}
+}

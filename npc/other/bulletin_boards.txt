@@ -45,7 +45,7 @@ alberta,111,59,5	script	Bulletin Board#1	837,{
 	close;
 }
 
-geffen,124,65,5	script	Bulletin Board#2	837,{
+geffen,137,58,5	script	Bulletin Board#2	837,{
 	mes "[Geffen: The City of Magic]";
 	mes "Welcome to Geffen, the City of Magic. Geffen is well known for its various legends related to magic.";
 	next;
@@ -383,7 +383,6 @@ niflheim,200,191,5	script	Bulletin Board#25	837,{
 	close;
 }
 
-/*
 moc_fild15,267,264,5	script	Bulletin Board#26	837,{
 	mes "[Ant Hell]";
 	mes "^6B1312Caution!^000000";
@@ -398,7 +397,6 @@ moc_fild15,267,264,5	script	Bulletin Board#26	837,{
 	mes "a boss monster called ^6B1312Phreeoni^000000 will appear at certain time.";
 	close;
 }
-*/
 
 glast_01,369,308,5	script	Bulletin Board#28	837,{
 	mes "[Glast Heim]";
