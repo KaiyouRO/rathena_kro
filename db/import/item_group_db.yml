@@ -1,0 +1,3140 @@
+# This file is a part of rAthena.
+#   Copyright(C) 2021 rAthena Development Team
+#   https://rathena.org - https://github.com/rathena
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+###########################################################################
+# Item Group Database
+###########################################################################
+#
+# Item Group Settings
+#
+###########################################################################
+# - Group                      Group name of the item.
+#   SubGroups:
+#     - SubGroup:              SubGroup number associated with the list of item. See doc/item_group.txt for more information.
+#       List:                  List of item(s) for the SubGroup.
+#        - Index               Unique number that can be used to add the same Item with different data in the list.
+#          Item                AegisName of item that will be obtained from this item group.
+#          Rate                Probability to get the item. (Default: 0)
+#          Amount              Amount of item that will be obtained. (Default: 1)
+#          Duration            Makes the item a rental item which will expire within the given amount in minutes. Not intended for use with stackable items. (Default: 0)
+#          Announced           If player obtains this item it will be broadcasted to the server. (Default: false)
+#          UniqueId            Makes the given item(s) have a Unique ID. (Default: false)
+#          Stacked             Whether stackable items are given stacked or not. (Default: true)
+#          Named               Inscribes the item with the obtainer's name. (Default: false)
+#          Bound               Binds the obtained item. (Default: None)
+#          RandomOptionGroup   Applies random options of this group to all equipable items (Default: None)
+#          RefineMinimum       Applies at least this refine level to all equipable items (Default: 0)
+#          RefineMaximum       Applies at most this refine level to all equipable items (Default: 0)
+#          Clear               Whether the current datas should be removed. (Optional)
+#       Clear                  Remove the given SubGroup. (Optional)
+###########################################################################
+
+Header:
+  Type: ITEM_GROUP_DB
+  Version: 3
+Body:
+  - Group: PRIVATE_AIRSHIP
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Nyangvine_Fruit
+            Rate: 1
+          - Index: 2
+            Item: World_Tour_Ticket
+            Rate: 1
+  - Group: PORINGSPRECIOUSBOX
+    SubGroups:
+      - SubGroup: 0
+        List:
+          - Index: 1
+            Item: Orange_Potion
+            Amount: 3
+          - Index: 2
+            Item: N_Fly_Wing
+            Amount: 3
+          - Index: 3
+            Item: Candy_Striper
+            Amount: 5
+          - Index: 4
+            Item: Candy
+            Amount: 5
+  - Group: EVENT_BOX
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Roulette_Gold_Coin
+            Rate: 1
+          - Index: 2
+            Item: Roulette_Silver_Coin
+            Rate: 5
+          - Index: 3
+            Item: Roulette_Copper_Coin
+            Rate: 80
+          - Index: 4
+            Item: Bronze_Key_MvP
+            Rate: 1
+  - Group: MES_1
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Hat_Of_Cake
+            Rate: 10
+          - Index: 2
+            Item: C_Cowboy_Hat
+            Rate: 10
+          - Index: 3
+            Item: Full_Moon
+            Rate: 10
+          - Index: 4
+            Item: C_Dragonhelm_Copper
+            Rate: 10
+          - Index: 5
+            Item: C_Sahkkat
+            Rate: 10
+          - Index: 6
+            Item: C_Takius_Blindfold
+            Rate: 10
+          - Index: 7
+            Item: C_Heart_Eyebandage
+            Rate: 10
+          - Index: 8
+            Item: C_Zorro_Mask
+            Rate: 10
+          - Index: 9
+            Item: C_Angry_Mouth
+            Rate: 10
+          - Index: 10
+            Item: C_Pirate_Dagger
+            Rate: 10
+  - Group: MES_2
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Side_Cap
+            Rate: 10
+          - Index: 2
+            Item: C_Engineer_Cap
+            Rate: 10
+          - Index: 3
+            Item: C_Mono_Gothic_Bonnet
+            Rate: 10
+          - Index: 4
+            Item: C_Angel_Mini_Silk_Hat_B
+            Rate: 10
+          - Index: 5
+            Item: C_Fallen_Angel_Blessing
+            Rate: 10
+          - Index: 6
+            Item: C_Hawkeye
+            Rate: 10
+          - Index: 7
+            Item: C_Black_Cat
+            Rate: 10
+          - Index: 8
+            Item: C_War_Princess_Ribbon
+            Rate: 10
+          - Index: 9
+            Item: C_Necklace_Rosary
+            Rate: 10
+          - Index: 10
+            Item: C_Cat_Ears_Cape_Red
+            Rate: 10
+  - Group: MES_3
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Cowlick_WH
+            Rate: 10
+          - Index: 2
+            Item: C_Flight_Cap
+            Rate: 10
+          - Index: 3
+            Item: C_Parcel_Hat
+            Rate: 10
+          - Index: 4
+            Item: C_Ancient_Queen
+            Rate: 10
+          - Index: 5
+            Item: C_Hair_Bun_WH
+            Rate: 10
+          - Index: 6
+            Item: C_Rabbit_Ribbon_Hat
+            Rate: 10
+          - Index: 7
+            Item: C_Skymet_
+            Rate: 10
+          - Index: 8
+            Item: C_Wing_Of_Happiness
+            Rate: 10
+  - Group: MES_4
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_CatEars_Cyber_HeadP_R
+            Rate: 10
+          - Index: 2
+            Item: C_Small_Horn_Of_Devil
+            Rate: 10
+          - Index: 3
+            Item: C_Vanargandr_Helm
+            Rate: 10
+          - Index: 4
+            Item: C_Hunting_Cap
+            Rate: 10
+          - Index: 5
+            Item: C_Shura_King_Pledge
+            Rate: 10
+          - Index: 6
+            Item: C_Moon_Eyepatch
+            Rate: 10
+          - Index: 7
+            Item: C_Shiba_Inu
+            Rate: 10
+          - Index: 8
+            Item: C_Under_Rim_Glasses
+            Rate: 10
+  - Group: MES_5
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Sweet_Bonnet
+            Rate: 10
+          - Index: 2
+            Item: C_Soulless_Wing
+            Rate: 10
+          - Index: 3
+            Item: C_Tare_Neko_Cru
+            Rate: 10
+          - Index: 4
+            Item: C_Vane_Hairpin
+            Rate: 10
+          - Index: 5
+            Item: C_Misty_Ears
+            Rate: 10
+          - Index: 6
+            Item: C_Love_Chick_Hat
+            Rate: 10
+          - Index: 7
+            Item: C_Garnet_Tiara
+            Rate: 10
+          - Index: 8
+            Item: C_Bell_Ribbon
+            Rate: 10
+  - Group: MES_6
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Wind-Up_Key
+            Rate: 10
+          - Index: 2
+            Item: C_Gothic_Pumpkin_Head
+            Rate: 10
+          - Index: 3
+            Item: C_Catharina_Von_Brad_60th
+            Rate: 10
+          - Index: 4
+            Item: C_Cat_Ears_Punkish
+            Rate: 10
+          - Index: 5
+            Item: C_Crow
+            Rate: 10
+          - Index: 6
+            Item: C_False_Ears
+            Rate: 10
+          - Index: 7
+            Item: C_Suit_Sollar
+            Rate: 10
+          - Index: 8
+            Item: C_Glastheim_Obeserver
+            Rate: 10
+          - Index: 9
+            Item: C_Volume_Low_Twin
+            Rate: 10
+  - Group: MES_7
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Alice_Wig
+            Rate: 10
+          - Index: 2
+            Item: C_Khalitzburg_KN_Helm
+            Rate: 10
+          - Index: 3
+            Item: C_Chung_E_Shinyon_Cap
+            Rate: 10
+          - Index: 4
+            Item: C_Faceworm_Eggshell
+            Rate: 10
+          - Index: 5
+            Item: C_Gerhard_Von_Devi
+            Rate: 10
+          - Index: 6
+            Item: C_Rolf_Von_Ziege_666_II
+            Rate: 10
+          - Index: 7
+            Item: C_Stretched_Nose_M
+            Rate: 10
+          - Index: 8
+            Item: C_Flame_Muffler
+            Rate: 10
+          - Index: 9
+            Item: C_Fallen_Angel_Valletta
+            Rate: 10
+          - Index: 10
+            Item: C_Queen_Scarabas_Helmet
+            Rate: 10
+  - Group: MES_8
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Camouflage_RabbitHood
+            Rate: 10
+          - Index: 2
+            Item: C_Love_Rabbit_Hood
+            Rate: 10
+          - Index: 3
+            Item: C_Rabbit_Ear_Hat
+            Rate: 10
+          - Index: 4
+            Item: C_Rabbit_Ear_Knit_Hat
+            Rate: 10
+          - Index: 5
+            Item: C_Rabbit_Magic_Hat
+            Rate: 10
+          - Index: 6
+            Item: C_Snow_Rabbit_Knit_Hat
+            Rate: 10
+          - Index: 7
+            Item: C_Rabbit_Earplug
+            Rate: 10
+          - Index: 8
+            Item: C_Pretty_Rabbit_Hood
+            Rate: 10
+  - Group: MES_9
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Laser_of_Eagle
+            Rate: 10
+          - Index: 2
+            Item: C_Radio_Antenna
+            Rate: 10
+          - Index: 3
+            Item: C_Sorcerer_Hood
+            Rate: 10
+          - Index: 4
+            Item: C_Yellow_Wizardry_Hat
+            Rate: 10
+          - Index: 5
+            Item: C_Blinking_Eyes
+            Rate: 10
+          - Index: 6
+            Item: C_Floating_Stone_Of_Int
+            Rate: 10
+          - Index: 7
+            Item: C_Book_Of_Magic
+            Rate: 10
+          - Index: 8
+            Item: C_Darkness_Veil
+            Rate: 10
+          - Index: 9
+            Item: C_Vajra
+            Rate: 10
+          - Index: 10
+            Item: C_Magic_Circle
+            Rate: 10
+  - Group: MES_10
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Astro_Circle
+            Rate: 10
+          - Index: 2
+            Item: Lightning_Cloud
+            Rate: 10
+          - Index: 3
+            Item: C_Blue_Magicianhat
+            Rate: 10
+          - Index: 4
+            Item: C_Drooping_Kitty
+            Rate: 10
+          - Index: 5
+            Item: C_Snow_Bear_Food
+            Rate: 10
+          - Index: 6
+            Item: C_Penguin_Cap_BU
+            Rate: 10
+          - Index: 7
+            Item: C_Baby_Penguin
+            Rate: 10
+          - Index: 8
+            Item: C_Fluffy_Heart_Earmuffs
+            Rate: 10
+          - Index: 9
+            Item: C_Luwmin_Ice
+            Rate: 10
+          - Index: 10
+            Item: C_Fluffy_Angel_Cape
+            Rate: 10
+  - Group: MES_11
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Pope_Sitting_Head
+            Rate: 10
+          - Index: 2
+            Item: C_Light_Moonlight_Hat
+            Rate: 10
+          - Index: 3
+            Item: C_Stings_Silk_Ribbon
+            Rate: 10
+          - Index: 4
+            Item: C_Blue_Frill_Ribbon
+            Rate: 10
+          - Index: 5
+            Item: C_SeraphimCoronet
+            Rate: 10
+          - Index: 6
+            Item: C_Blue_Rose_Eyepatch
+            Rate: 10
+          - Index: 7
+            Item: C_White_Cat
+            Rate: 10
+          - Index: 8
+            Item: C_Toy_Syringe
+            Rate: 10
+          - Index: 9
+            Item: C_Lolita_Two_Side_Up
+            Rate: 10
+          - Index: 10
+            Item: C_L_RibbonMuff_Black
+            Rate: 10
+  - Group: MES_12
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Celestial_Flower
+            Rate: 10
+          - Index: 2
+            Item: C_Miyabi_Long_Hair
+            Rate: 10
+          - Index: 3
+            Item: C_Cherry_Blossom_Hat_YL
+            Rate: 10
+          - Index: 4
+            Item: C_Sinsuncho_Hat
+            Rate: 10
+          - Index: 5
+            Item: C_Fairy_Feathers
+            Rate: 10
+          - Index: 6
+            Item: C_Fox_Ears_Bell_Ribbon
+            Rate: 10
+          - Index: 7
+            Item: C_Ninja_Scroll
+            Rate: 10
+          - Index: 8
+            Item: C_Love_Piece
+            Rate: 10
+          - Index: 9
+            Item: C_Full_BloomCherry_Tree
+            Rate: 10
+  - Group: COSTUME1
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Orc_Helm
+            Rate: 10
+          - Index: 2
+            Item: C_Snake_Hat2
+            Rate: 10
+          - Index: 3
+            Item: Donation_Ribbon
+            Rate: 10
+          - Index: 4
+            Item: C_Green_Feeler
+            Rate: 10
+          - Index: 5
+            Item: C_Jack_A_Dandy
+            Rate: 10
+          - Index: 6
+            Item: C_Helm
+            Rate: 10
+          - Index: 7
+            Item: C_Sharp_Gear
+            Rate: 10
+          - Index: 8
+            Item: C_Iron_Cane
+            Rate: 10
+          - Index: 9
+            Item: C_Angelic_Chain
+            Rate: 10
+          - Index: 10
+            Item: C_Goggle
+            Rate: 10
+          - Index: 11
+            Item: C_Magestic_Goat
+            Rate: 10
+          - Index: 12
+            Item: C_Elven_Ears
+            Rate: 10
+          - Index: 13
+            Item: C_Centimental_Flower
+            Rate: 10
+          - Index: 14
+            Item: C_Assassin_Mask_
+            Rate: 10
+          - Index: 15
+            Item: C_Sphinx_Helm
+            Rate: 10
+          - Index: 16
+            Item: C_Zorro_Mask
+            Rate: 10
+          - Index: 17
+            Item: C_Ribbon_Red
+            Rate: 10
+          - Index: 18
+            Item: C_Puppy_Headband
+            Rate: 10
+          - Index: 19
+            Item: C_Corsair
+            Rate: 10
+          - Index: 20
+            Item: C_Bunny_Band
+            Rate: 10
+          - Index: 21
+            Item: C_Headset
+            Rate: 10
+          - Index: 22
+            Item: C_Tiara
+            Rate: 10
+          - Index: 23
+            Item: C_Crown
+            Rate: 10
+          - Index: 24
+            Item: C_Hat
+            Rate: 10
+          - Index: 25
+            Item: C_Flu_Mask
+            Rate: 10
+          - Index: 26
+            Item: C_Pierrot_Nose
+            Rate: 10
+          - Index: 27
+            Item: C_Nurse_Cap
+            Rate: 10
+          - Index: 28
+            Item: C_Pink_Ribbon
+            Rate: 10
+          - Index: 29
+            Item: C_Coronet
+            Rate: 10
+          - Index: 30
+            Item: C_Goblin_Mask_04
+            Rate: 10
+          - Index: 31
+            Item: C_Panda_Cap
+            Rate: 10
+          - Index: 32
+            Item: C_Binoculars
+            Rate: 10
+          - Index: 33
+            Item: C_Fin_Helm
+            Rate: 10
+          - Index: 34
+            Item: C_Morrigane's_Helm
+            Rate: 10
+          - Index: 35
+            Item: C_Wedding_Veil
+            Rate: 10
+          - Index: 36
+            Item: C_Goblin_Mask_01
+            Rate: 10
+          - Index: 37
+            Item: C_Goblin_Mask_02
+            Rate: 10
+          - Index: 38
+            Item: C_Goblin_Mask_03
+            Rate: 10
+          - Index: 39
+            Item: C_Lord_Circlet
+            Rate: 10
+          - Index: 40
+            Item: C_Bone_Helm
+            Rate: 10
+          - Index: 41
+            Item: C_Apple_Of_Archer
+            Rate: 10
+          - Index: 42
+            Item: C_Golden_Gear
+            Rate: 10
+          - Index: 43
+            Item: C_Angry_Mouth
+            Rate: 10
+          - Index: 44
+            Item: C_Sunglasses
+            Rate: 10
+          - Index: 45
+            Item: C_Poring_Hat
+            Rate: 10
+          - Index: 46
+            Item: C_Big_Sis_Ribbon
+            Rate: 10
+          - Index: 47
+            Item: C_Munak_Turban
+            Rate: 10
+          - Index: 48
+            Item: C_Bongun_Hat
+            Rate: 10
+          - Index: 49
+            Item: C_Galapago_Cap
+            Rate: 10
+          - Index: 50
+            Item: C_Horn_Of_Succubus
+            Rate: 10
+          - Index: 51
+            Item: C_Inccubus_Horn
+            Rate: 10
+          - Index: 52
+            Item: C_Joker_Jester
+            Rate: 10
+          - Index: 53
+            Item: C_Blinker
+            Rate: 10
+          - Index: 54
+            Item: C_Luxury_Sunglasses
+            Rate: 10
+          - Index: 55
+            Item: C_One_Eyed_Glass
+            Rate: 10
+          - Index: 56
+            Item: C_Glasses
+            Rate: 10
+          - Index: 57
+            Item: C_Pair_Of_Red_Ribbon
+            Rate: 10
+          - Index: 58
+            Item: C_Cigar
+            Rate: 10
+          - Index: 59
+            Item: C_Poo_Poo_Hat
+            Rate: 10
+          - Index: 60
+            Item: C_Marionette_Doll
+            Rate: 10
+          - Index: 61
+            Item: C_Orange_Ribbon
+            Rate: 10
+          - Index: 62
+            Item: C_Ph.D_Hat
+            Rate: 10
+          - Index: 63
+            Item: C_Stop_Post
+            Rate: 10
+          - Index: 64
+            Item: C_Baby_Pacifier
+            Rate: 10
+          - Index: 65
+            Item: C_Ghost_Bandana
+            Rate: 10
+          - Index: 66
+            Item: C_Construction_Helmet
+            Rate: 10
+          - Index: 67
+            Item: C_Biretta
+            Rate: 10
+          - Index: 68
+            Item: C_Smoking_Pipe
+            Rate: 10
+          - Index: 69
+            Item: C_Star_Sparkling
+            Rate: 10
+          - Index: 70
+            Item: C_Masquerade
+            Rate: 10
+          - Index: 71
+            Item: C_Mini_Glasses
+            Rate: 10
+          - Index: 72
+            Item: C_Bomb_Wick
+            Rate: 10
+          - Index: 73
+            Item: C_Magni_Cap
+            Rate: 10
+          - Index: 74
+            Item: C_Fricca's_Circlet
+            Rate: 10
+          - Index: 75
+            Item: C_Morpheus's_Hood
+            Rate: 10
+          - Index: 76
+            Item: C_Goibne's_Helm
+            Rate: 10
+          - Index: 77
+            Item: C_Bandana
+            Rate: 10
+          - Index: 78
+            Item: C_Ribbon_Yellow
+            Rate: 10
+          - Index: 79
+            Item: C_Sunflower
+            Rate: 10
+  - Group: COSTUME2
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Spore_Hat
+            Rate: 10
+          - Index: 2
+            Item: C_Boys_Cap
+            Rate: 10
+          - Index: 3
+            Item: C_Valkyrie_Helm
+            Rate: 10
+          - Index: 4
+            Item: C_Deviruchi_Cap
+            Rate: 10
+          - Index: 5
+            Item: C_Frog_Cap
+            Rate: 10
+          - Index: 6
+            Item: C_Blush
+            Rate: 10
+          - Index: 7
+            Item: C_Hahoe_Mask
+            Rate: 10
+          - Index: 8
+            Item: C_Kabuki_Mask
+            Rate: 10
+          - Index: 9
+            Item: C_Feather_Beret
+            Rate: 10
+          - Index: 10
+            Item: C_Note_Headphone
+            Rate: 10
+          - Index: 11
+            Item: C_Mask_Of_Fox
+            Rate: 10
+          - Index: 12
+            Item: C_Dectective_Hat
+            Rate: 10
+          - Index: 13
+            Item: C_Ear_Of_Devils_Wing
+            Rate: 10
+          - Index: 14
+            Item: C_Mini_Propeller
+            Rate: 10
+          - Index: 15
+            Item: C_Mr_Smile
+            Rate: 10
+          - Index: 16
+            Item: C_Sahkkat
+            Rate: 10
+          - Index: 17
+            Item: C_Captain_Hat
+            Rate: 10
+          - Index: 18
+            Item: C_Coppola
+            Rate: 10
+          - Index: 19
+            Item: C_Poring_Cake_Hat
+            Rate: 10
+          - Index: 20
+            Item: C_Romantic_Gent
+            Rate: 10
+          - Index: 21
+            Item: C_Gas_Mask
+            Rate: 10
+          - Index: 22
+            Item: C_Water_Lily_Crown
+            Rate: 10
+          - Index: 23
+            Item: C_Well_Baked_Toast
+            Rate: 10
+          - Index: 24
+            Item: C_Mistress_Crown
+            Rate: 10
+          - Index: 25
+            Item: C_Alarm_Mask
+            Rate: 10
+          - Index: 26
+            Item: C_Foxhat
+            Rate: 10
+          - Index: 27
+            Item: C_Straw_Hat
+            Rate: 10
+          - Index: 28
+            Item: C_L_Magestic_Goat
+            Rate: 10
+          - Index: 29
+            Item: C_Opera_Ghost_Mask
+            Rate: 10
+          - Index: 30
+            Item: C_Leaf_Headgear
+            Rate: 10
+          - Index: 31
+            Item: C_Lazy_Raccoon
+            Rate: 10
+          - Index: 32
+            Item: C_Cap_Of_Concentration
+            Rate: 10
+          - Index: 33
+            Item: C_Antler
+            Rate: 10
+          - Index: 34
+            Item: C_AFK_Hat
+            Rate: 10
+          - Index: 35
+            Item: C_Hot_Blood_Headband
+            Rate: 10
+          - Index: 36
+            Item: C_Welding_Mask
+            Rate: 10
+          - Index: 37
+            Item: C_Hairband_Of_Grandpeco
+            Rate: 10
+          - Index: 38
+            Item: C_Funeral_Costume
+            Rate: 10
+          - Index: 39
+            Item: C_Hat_Of_Cake
+            Rate: 10
+          - Index: 40
+            Item: C_Antenna
+            Rate: 10
+          - Index: 41
+            Item: C_Fur_Hat
+            Rate: 10
+          - Index: 42
+            Item: C_Poporing_Cap
+            Rate: 10
+          - Index: 43
+            Item: C_Fashionable_Glasses
+            Rate: 10
+          - Index: 44
+            Item: C_Observer
+            Rate: 10
+          - Index: 45
+            Item: C_Poison_Spore_Hat
+            Rate: 10
+          - Index: 46
+            Item: C_Prontera_Army_Cap
+            Rate: 10
+          - Index: 47
+            Item: C_Hockey_Mask
+            Rate: 10
+          - Index: 48
+            Item: C_Zealotus_Mask
+            Rate: 10
+          - Index: 49
+            Item: C_Bird_Nest_Hat
+            Rate: 10
+          - Index: 50
+            Item: C_Mandragora_Cap
+            Rate: 10
+          - Index: 51
+            Item: C_Sombrero
+            Rate: 10
+  - Group: Box_99_70
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Rune_Circlet
+            Rate: 10
+          - Index: 2
+            Item: C_Mitra
+            Rate: 10
+          - Index: 3
+            Item: C_Driver_Band_R
+            Rate: 10
+          - Index: 4
+            Item: C_Driver_Band_Y
+            Rate: 10
+          - Index: 5
+            Item: C_Shadow_Handicraft
+            Rate: 10
+          - Index: 6
+            Item: C_Minstrel_Song_Hat
+            Rate: 10
+          - Index: 7
+            Item: C_Midas_Whisper
+            Rate: 10
+          - Index: 8
+            Item: C_Magic_Stone_Hat
+            Rate: 10
+          - Index: 9
+            Item: C_Blazing_Soul
+            Rate: 10
+          - Index: 10
+            Item: C_Wind_Whisper
+            Rate: 10
+          - Index: 11
+            Item: C_Dying_Swan
+            Rate: 10
+          - Index: 12
+            Item: C_Protect_Of_Crown
+            Rate: 10
+          - Index: 13
+            Item: C_Circlet_Of_Bone
+            Rate: 10
+          - Index: 14
+            Item: C_Camouflage_RabbitHood
+            Rate: 10
+          - Index: 15
+            Item: C_Sniper_Google
+            Rate: 10
+          - Index: 16
+            Item: C_Schmitz_Helm
+            Rate: 10
+  - Group: COSTUME3
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Drooping_Kiehl
+            Rate: 10
+          - Index: 2
+            Item: Drooping_Aliot
+            Rate: 10
+          - Index: 3
+            Item: C_Droopy_Alice_Doll
+            Rate: 10
+          - Index: 4
+            Item: C_Drooping_Gunslinger
+            Rate: 10
+          - Index: 5
+            Item: C_Tare_Pope_Casual
+            Rate: 10
+          - Index: 6
+            Item: C_Tare_W_Doll
+            Rate: 10
+          - Index: 7
+            Item: C_Tare_Ahat
+            Rate: 10
+          - Index: 8
+            Item: C_JP_EV12
+            Rate: 10
+          - Index: 9
+            Item: Costume_Drooping_Schmidt
+            Rate: 10
+          - Index: 10
+            Item: Costume_Drooping_Oscar
+            Rate: 10
+          - Index: 11
+            Item: Costume_Drooping_Heinrich
+            Rate: 10
+  - Group: KACHUA_KEY
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Kachua_box_1
+            Rate: 78
+          - Index: 2
+            Item: Kachua_box_2
+            Rate: 78
+          - Index: 3
+            Item: Kachua_box_3
+            Rate: 78
+          - Index: 4
+            Item: Kachua_box_4
+            Rate: 78
+          - Index: 5
+            Item: Kachua_box_5
+            Rate: 78
+          - Index: 6
+            Item: Kachua_box_6
+            Rate: 78
+          - Index: 7
+            Item: Kachua_box_7
+            Rate: 390
+          - Index: 8
+            Item: Ambernite_Card
+            Rate: 1
+          - Index: 9
+            Item: Anacondaq_Card
+            Rate: 1
+          - Index: 10
+            Item: Andre_Card
+            Rate: 1
+          - Index: 11
+            Item: Anopheles_Card
+            Rate: 1
+          - Index: 12
+            Item: Argiope_Card
+            Rate: 1
+          - Index: 13
+            Item: Argos_Card
+            Rate: 1
+          - Index: 14
+            Item: Aster_Card
+            Rate: 1
+          - Index: 15
+            Item: BigFoot_Card
+            Rate: 1
+          - Index: 16
+            Item: Blazzer_Card
+            Rate: 1
+          - Index: 17
+            Item: Caramel_Card
+            Rate: 1
+          - Index: 18
+            Item: Chonchon_Card
+            Rate: 1
+          - Index: 19
+            Item: Coco_Card
+            Rate: 1
+          - Index: 20
+            Item: Condor_Card
+            Rate: 1
+          - Index: 21
+            Item: Cornutus_Card
+            Rate: 1
+          - Index: 22
+            Item: Creamy_Card
+            Rate: 1
+          - Index: 23
+            Item: Desert_Wolf_Card
+            Rate: 1
+          - Index: 24
+            Item: Desert_Wolf_Babe_Card
+            Rate: 1
+          - Index: 25
+            Item: Dokebi_Card
+            Rate: 1
+          - Index: 26
+            Item: Dragon_Egg_Card
+            Rate: 1
+          - Index: 27
+            Item: Dragon_Fly_Card
+            Rate: 1
+          - Index: 28
+            Item: Drainliar_Card
+            Rate: 1
+          - Index: 29
+            Item: Drops_Card
+            Rate: 1
+          - Index: 30
+            Item: Dustiness_Card
+            Rate: 1
+          - Index: 31
+            Item: Elder_Wilow_Card
+            Rate: 1
+          - Index: 32
+            Item: Flora_Card
+            Rate: 1
+          - Index: 33
+            Item: Galion_Card
+            Rate: 1
+          - Index: 34
+            Item: Gargoyle_Card
+            Rate: 1
+          - Index: 35
+            Item: Ghoul_Card
+            Rate: 1
+          - Index: 36
+            Item: Goblin_Archer_Card
+            Rate: 1
+          - Index: 37
+            Item: Goblin_Card
+            Rate: 1
+          - Index: 38
+            Item: Golem_Card
+            Rate: 1
+          - Index: 39
+            Item: Hode_Card
+            Rate: 1
+          - Index: 40
+            Item: Hornet_Card
+            Rate: 1
+          - Index: 41
+            Item: Horong_Card
+            Rate: 1
+          - Index: 42
+            Item: Isis_Card
+            Rate: 1
+          - Index: 43
+            Item: Jakk_Card
+            Rate: 1
+          - Index: 44
+            Item: Kapha_Card
+            Rate: 1
+          - Index: 45
+            Item: Kobold_Archer_Card
+            Rate: 1
+          - Index: 46
+            Item: Kobold_Card
+            Rate: 1
+          - Index: 47
+            Item: Kukre_Card
+            Rate: 1
+          - Index: 48
+            Item: Leaf_Cat_Card
+            Rate: 1
+          - Index: 49
+            Item: Lude_Card
+            Rate: 1
+          - Index: 50
+            Item: Lunatic_Card
+            Rate: 1
+          - Index: 51
+            Item: Magmaring_Card
+            Rate: 1
+          - Index: 52
+            Item: Mandragora_Card
+            Rate: 1
+          - Index: 53
+            Item: Mantis_Card
+            Rate: 1
+          - Index: 54
+            Item: Marine_Sphere_Card
+            Rate: 1
+          - Index: 55
+            Item: Marionette_Card
+            Rate: 1
+          - Index: 56
+            Item: Marse_Card
+            Rate: 1
+          - Index: 57
+            Item: Martin_Card
+            Rate: 1
+          - Index: 58
+            Item: Megalith_Card
+            Rate: 1
+          - Index: 59
+            Item: Muka_Card
+            Rate: 1
+          - Index: 60
+            Item: Mummy_Card
+            Rate: 1
+          - Index: 61
+            Item: Munak_Card
+            Rate: 1
+          - Index: 62
+            Item: Myst_Card
+            Rate: 1
+          - Index: 63
+            Item: Neraid_Card
+            Rate: 1
+          - Index: 64
+            Item: Noxious_Card
+            Rate: 1
+          - Index: 65
+            Item: Obeaune_Card
+            Rate: 1
+          - Index: 66
+            Item: Orc_Archer_Card
+            Rate: 1
+          - Index: 67
+            Item: Orc_Lady_Card
+            Rate: 1
+          - Index: 68
+            Item: Orc_Skeleton_Card
+            Rate: 1
+          - Index: 69
+            Item: Orc_Warrior_Card
+            Rate: 1
+          - Index: 70
+            Item: Orc_Zombie_Card
+            Rate: 1
+          - Index: 71
+            Item: Parasite_Card
+            Rate: 1
+          - Index: 72
+            Item: Pecopeco_Card
+            Rate: 1
+          - Index: 73
+            Item: Pecopeco_Egg_Card
+            Rate: 1
+          - Index: 74
+            Item: Picky_Card
+            Rate: 1
+          - Index: 75
+            Item: Pirate_Skel_Card
+            Rate: 1
+          - Index: 76
+            Item: Plasma_Card
+            Rate: 1
+          - Index: 77
+            Item: Poison_Spore_Card
+            Rate: 1
+          - Index: 78
+            Item: Poison_Toad_Card
+            Rate: 1
+          - Index: 79
+            Item: Poporing_Card
+            Rate: 1
+          - Index: 80
+            Item: Porcellio_Card
+            Rate: 1
+          - Index: 81
+            Item: Poring_Card
+            Rate: 1
+          - Index: 82
+            Item: Quve_Card
+            Rate: 1
+          - Index: 83
+            Item: Rafflesia_Card
+            Rate: 1
+          - Index: 84
+            Item: Raggler_Card
+            Rate: 1
+          - Index: 85
+            Item: Rocker_Card
+            Rate: 1
+          - Index: 86
+            Item: Roda_Frog_Card
+            Rate: 1
+          - Index: 87
+            Item: Rotar_Zairo_Card
+            Rate: 1
+          - Index: 88
+            Item: Roween_Card
+            Rate: 1
+          - Index: 89
+            Item: Sageworm_Card
+            Rate: 1
+          - Index: 90
+            Item: Sand_Man_Card
+            Rate: 1
+          - Index: 91
+            Item: Sasquatch_Card
+            Rate: 1
+          - Index: 92
+            Item: Savage_Card
+            Rate: 1
+          - Index: 93
+            Item: Scorpion_Card
+            Rate: 1
+          - Index: 94
+            Item: Shellfish_Card
+            Rate: 1
+          - Index: 95
+            Item: Side_Winder_Card
+            Rate: 1
+          - Index: 96
+            Item: Skeleton_Card
+            Rate: 1
+          - Index: 97
+            Item: Skel_Worker_Card
+            Rate: 1
+          - Index: 98
+            Item: Smokie_Card
+            Rate: 1
+          - Index: 99
+            Item: Spore_Card
+            Rate: 1
+          - Index: 100
+            Item: Stainer_Card
+            Rate: 1
+          - Index: 101
+            Item: Steel_Chonchon_Card
+            Rate: 1
+          - Index: 102
+            Item: Stem_Worm_Card
+            Rate: 1
+          - Index: 103
+            Item: Stone_Shooter_Card
+            Rate: 1
+          - Index: 104
+            Item: Strouf_Card
+            Rate: 1
+          - Index: 105
+            Item: Sword_Fish_Card
+            Rate: 1
+          - Index: 106
+            Item: Tarou_Card
+            Rate: 1
+          - Index: 107
+            Item: Thara_Frog_Card
+            Rate: 1
+          - Index: 108
+            Item: Thief_Bug_Card
+            Rate: 1
+          - Index: 109
+            Item: Thief_Bug_Egg_Card
+            Rate: 1
+          - Index: 110
+            Item: Toad_Card
+            Rate: 1
+          - Index: 111
+            Item: Tri_Joint_Card
+            Rate: 1
+          - Index: 112
+            Item: Vadon_Card
+            Rate: 1
+          - Index: 113
+            Item: Vitata_Card
+            Rate: 1
+          - Index: 114
+            Item: Whisper_Card
+            Rate: 1
+          - Index: 115
+            Item: Wild_Rose_Card
+            Rate: 1
+          - Index: 116
+            Item: Wolf_Card
+            Rate: 1
+          - Index: 117
+            Item: Wootan_Fighter_Card
+            Rate: 1
+          - Index: 118
+            Item: Wootan_Shooter_Card
+            Rate: 1
+          - Index: 119
+            Item: Worm_Tail_Card
+            Rate: 1
+          - Index: 120
+            Item: Yoyo_Card
+            Rate: 1
+          - Index: 121
+            Item: Zerom_Card
+            Rate: 1
+          - Index: 122
+            Item: Zipper_Bear_Card
+            Rate: 1
+          - Index: 123
+            Item: Zombie_Card
+            Rate: 1
+          - Index: 124
+            Item: Padded_Armor_
+            Rate: 13
+          - Index: 125
+            Item: Leather_Jacket_
+            Rate: 13
+          - Index: 126
+            Item: Adventurere's_Suit_
+            Rate: 13
+          - Index: 127
+            Item: Thief_Clothes_
+            Rate: 13
+          - Index: 128
+            Item: Saint_Robe_
+            Rate: 13
+          - Index: 129
+            Item: Silver_Robe_
+            Rate: 13
+          - Index: 130
+            Item: Mantle_
+            Rate: 13
+          - Index: 131
+            Item: Hood_
+            Rate: 13
+          - Index: 132
+            Item: Apple_Of_Archer
+            Rate: 13
+          - Index: 133
+            Item: Belt
+            Rate: 13
+          - Index: 134
+            Item: Kachua_box_8
+            Rate: 45
+          - Index: 135
+            Item: Bubble_Gum
+            Rate: 13
+          - Index: 136
+            Item: Token_Of_Siegfried
+            Rate: 13
+            amount: 3
+          - Index: 137
+            Item: Kachua_Quest1
+            Rate: 7
+          - Index: 138
+            Item: Kachua_Quest2
+            Rate: 7
+          - Index: 139
+            Item: Kachua_Quest3
+            Rate: 7
+          - Index: 140
+            Item: Kachua_Quest4
+            Rate: 7
+          - Index: 141
+            Item: Kachua_Quest5
+            Rate: 7
+          - Index: 142
+            Item: Kachua_Quest6
+            Rate: 7
+          - Index: 143
+            Item: Kachua_Quest7
+            Rate: 7
+          - Index: 144
+            Item: Kachua_Quest8
+            Rate: 7
+          - Index: 145
+            Item: Kachua_Quest9
+            Rate: 7
+          - Index: 146
+            Item: Kachua_Quest10
+            Rate: 7
+          - Index: 147
+            Item: Kachua_Quest11
+            Rate: 7
+          - Index: 148
+            Item: Kachua_Quest12
+            Rate: 7
+          - Index: 149
+            Item: Kachua_Quest13
+            Rate: 7
+          - Index: 150
+            Item: Kachua_Quest14
+            Rate: 7
+          - Index: 151
+            Item: Kachua_Quest15
+            Rate: 7
+          - Index: 152
+            Item: Kachua_Quest16
+            Rate: 7
+          - Index: 153
+            Item: Kachua_Quest17
+            Rate: 7
+          - Index: 154
+            Item: Kachua_Quest18
+            Rate: 7
+          - Index: 155
+            Item: Kachua_Quest19
+            Rate: 7
+          - Index: 156
+            Item: Kachua_Quest20
+            Rate: 7
+  - Group: BOX_SORPRESA
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Costume_2016
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2023
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2059
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2083
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2097
+            Rate: 10
+          - Index: 4
+            Item: C_Costume_2130
+            Rate: 10
+          - Index: 5
+            Item: C_Costume_2138
+            Rate: 10
+          - Index: 6
+            Item: C_Costume_2140
+            Rate: 10
+          - Index: 7
+            Item: C_Costume_2141
+            Rate: 10
+          - Index: 8
+            Item: C_Costume_2145
+            Rate: 10
+          - Index: 9
+            Item: C_Costume_2146
+            Rate: 10
+          - Index: 10
+            Item: C_Costume_2147
+            Rate: 10
+          - Index: 11
+            Item: C_Costume_2148
+            Rate: 10
+          - Index: 12
+            Item: C_Costume_2149
+            Rate: 10
+          - Index: 13
+            Item: C_Costume_2152
+            Rate: 10
+          - Index: 14
+            Item: C_Costume_2154
+            Rate: 10
+          - Index: 15
+            Item: C_Costume_2162
+            Rate: 10
+          - Index: 16
+            Item: C_Costume_2163
+            Rate: 10
+          - Index: 17
+            Item: C_Costume_2165
+            Rate: 10
+          - Index: 18
+            Item: C_Costume_2177
+            Rate: 10
+          - Index: 19
+            Item: C_Costume_2204
+            Rate: 10
+          - Index: 20
+            Item: C_Costume_2223
+            Rate: 10
+          - Index: 21
+            Item: C_Costume_2226
+            Rate: 10
+          - Index: 22
+            Item: C_Costume_2248
+            Rate: 10
+          - Index: 23
+            Item: C_Costume_2252
+            Rate: 10
+          - Index: 24
+            Item: C_Costume_2282
+            Rate: 10
+          - Index: 25
+            Item: C_Costume_2281
+            Rate: 10
+          - Index: 26
+            Item: C_Costume_2310
+            Rate: 10
+          - Index: 27
+            Item: C_Costume_2315
+            Rate: 10
+          - Index: 28
+            Item: C_Costume_2317
+            Rate: 10
+          - Index: 29
+            Item: C_Costume_2319
+            Rate: 10
+          - Index: 30
+            Item: C_Costume_2321
+            Rate: 10
+  - Group: BOX_SORPRESA_GOLD
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Costume_2055
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2056
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2058
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2079
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2082
+            Rate: 10
+          - Index: 4
+            Item: C_Costume_2095
+            Rate: 10
+          - Index: 5
+            Item: C_Costume_2096
+            Rate: 10
+          - Index: 6
+            Item: C_Costume_2128
+            Rate: 10
+          - Index: 7
+            Item: C_Costume_2142
+            Rate: 10
+          - Index: 8
+            Item: C_Costume_2143
+            Rate: 10
+          - Index: 9
+            Item: C_Costume_2144
+            Rate: 10
+          - Index: 10
+            Item: C_Costume_2150
+            Rate: 10
+          - Index: 11
+            Item: C_Costume_2151
+            Rate: 10
+          - Index: 12
+            Item: C_Costume_2153
+            Rate: 10
+          - Index: 13
+            Item: C_Costume_2160
+            Rate: 10
+          - Index: 14
+            Item: C_Costume_2161
+            Rate: 10
+          - Index: 15
+            Item: C_Costume_2171
+            Rate: 10
+          - Index: 16
+            Item: C_Costume_2201
+            Rate: 10
+          - Index: 17
+            Item: C_Costume_2205
+            Rate: 10
+          - Index: 18
+            Item: C_Costume_2216
+            Rate: 10
+          - Index: 19
+            Item: C_Costume_2227
+            Rate: 10
+          - Index: 20
+            Item: C_Costume_2260
+            Rate: 10
+          - Index: 21
+            Item: C_Costume_2265
+            Rate: 10
+          - Index: 22
+            Item: C_Costume_2268
+            Rate: 10
+          - Index: 23
+            Item: C_Costume_2272
+            Rate: 10
+          - Index: 24
+            Item: C_Costume_2277
+            Rate: 10
+          - Index: 25
+            Item: C_Costume_2280
+            Rate: 10
+          - Index: 26
+            Item: C_Costume_2290
+            Rate: 10
+          - Index: 27
+            Item: C_Costume_2291
+            Rate: 10
+          - Index: 28
+            Item: C_Costume_2292
+            Rate: 10
+          - Index: 29
+            Item: C_Costume_2301
+            Rate: 10
+          - Index: 30
+            Item: C_Costume_2302
+            Rate: 10
+  - Group: BOX_SORPRESA_PLATINO
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Costume_2020
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2025
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2078
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2086
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2093
+            Rate: 10
+          - Index: 4
+            Item: C_Costume_2094
+            Rate: 10
+          - Index: 5
+            Item: C_Costume_2126
+            Rate: 10
+          - Index: 6
+            Item: C_Costume_2127
+            Rate: 10
+          - Index: 7
+            Item: C_Costume_2136
+            Rate: 10
+          - Index: 8
+            Item: C_Costume_2137
+            Rate: 10
+          - Index: 9
+            Item: C_Costume_2156
+            Rate: 10
+          - Index: 10
+            Item: C_Costume_2169
+            Rate: 10
+          - Index: 11
+            Item: C_Costume_2170
+            Rate: 10
+          - Index: 12
+            Item: C_Costume_2178
+            Rate: 10
+          - Index: 13
+            Item: C_Costume_2244
+            Rate: 10
+          - Index: 14
+            Item: C_Costume_2245
+            Rate: 10
+          - Index: 15
+            Item: C_Costume_2251
+            Rate: 10
+          - Index: 16
+            Item: C_Costume_2262
+            Rate: 10
+          - Index: 17
+            Item: C_Costume_2264
+            Rate: 10
+          - Index: 18
+            Item: C_Costume_2279
+            Rate: 10
+          - Index: 19
+            Item: C_Costume_2297
+            Rate: 10
+          - Index: 20
+            Item: C_Costume_2298
+            Rate: 10
+          - Index: 21
+            Item: C_Costume_2299
+            Rate: 10
+          - Index: 22
+            Item: C_Costume_2303
+            Rate: 10
+          - Index: 23
+            Item: C_Costume_2334
+            Rate: 10
+          - Index: 24
+            Item: C_Costume_2353
+            Rate: 10
+          - Index: 25
+            Item: C_Costume_2355
+            Rate: 10
+          - Index: 26
+            Item: C_Costume_2362
+            Rate: 10
+          - Index: 27
+            Item: C_Costume_2363
+            Rate: 10
+          - Index: 28
+            Item: C_Costume_2370
+            Rate: 10
+          - Index: 29
+            Item: C_Costume_2388
+            Rate: 10
+          - Index: 30
+            Item: C_Costume_2420
+            Rate: 10
+  - Group: VIP1
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Costume_2018
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2021
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2024
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2026
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2057
+            Rate: 10
+          - Index: 4
+            Item: C_Costume_2060
+            Rate: 10
+          - Index: 5
+            Item: C_Costume_2077
+            Rate: 10
+          - Index: 6
+            Item: C_Costume_2085
+            Rate: 10
+          - Index: 7
+            Item: C_Costume_2087
+            Rate: 10
+          - Index: 8
+            Item: C_Costume_2088
+            Rate: 10
+          - Index: 9
+            Item: C_Costume_2091
+            Rate: 10
+          - Index: 10
+            Item: C_Costume_2098
+            Rate: 10
+          - Index: 11
+            Item: C_Costume_2112
+            Rate: 10
+          - Index: 12
+            Item: C_Costume_2113
+            Rate: 10
+          - Index: 13
+            Item: C_Costume_2114
+            Rate: 10
+          - Index: 14
+            Item: C_Costume_2116
+            Rate: 10
+          - Index: 15
+            Item: C_Costume_2118
+            Rate: 10
+          - Index: 16
+            Item: C_Costume_2119
+            Rate: 10
+          - Index: 17
+            Item: C_Costume_2120
+            Rate: 10
+          - Index: 18
+            Item: C_Costume_2121
+            Rate: 10
+          - Index: 19
+            Item: C_Costume_2125
+            Rate: 10
+          - Index: 20
+            Item: C_Costume_2129
+            Rate: 10
+          - Index: 21
+            Item: C_Costume_2132
+            Rate: 10
+          - Index: 22
+            Item: C_Costume_2135
+            Rate: 10
+          - Index: 23
+            Item: C_Costume_2198
+            Rate: 10
+          - Index: 24
+            Item: C_Costume_2199
+            Rate: 10
+          - Index: 25
+            Item: C_Costume_2200
+            Rate: 10
+          - Index: 26
+            Item: C_Costume_2249
+            Rate: 10
+          - Index: 27
+            Item: C_Costume_2250
+            Rate: 10
+          - Index: 28
+            Item: C_Costume_2259
+            Rate: 10
+          - Index: 29
+            Item: C_Costume_2263
+            Rate: 10
+          - Index: 30
+            Item: C_Costume_2269
+            Rate: 10
+          - Index: 31
+            Item: C_Costume_2283
+            Rate: 1
+          - Index: 32
+            Item: C_Costume_2286
+            Rate: 1
+          - Index: 33
+            Item: C_Costume_2287
+            Rate: 1
+          - Index: 34
+            Item: C_Costume_2288
+            Rate: 1
+          - Index: 35
+            Item: C_Costume_2289
+            Rate: 1
+          - Index: 36
+            Item: C_Costume_2294
+            Rate: 1
+          - Index: 37
+            Item: C_Costume_2296
+            Rate: 1
+          - Index: 38
+            Item: C_Costume_2312
+            Rate: 1
+          - Index: 39
+            Item: C_Costume_2313
+            Rate: 1
+          - Index: 40
+            Item: C_Costume_2314
+            Rate: 1
+          - Index: 41
+            Item: C_Costume_2323
+            Rate: 1
+          - Index: 42
+            Item: C_Costume_2325
+            Rate: 1
+          - Index: 43
+            Item: C_Costume_2332
+            Rate: 1
+          - Index: 44
+            Item: C_Costume_2335
+            Rate: 1
+          - Index: 45
+            Item: C_Costume_2336
+            Rate: 1
+          - Index: 46
+            Item: C_Costume_2337
+            Rate: 1
+          - Index: 47
+            Item: C_Costume_2338
+            Rate: 1
+          - Index: 48
+            Item: C_Costume_2339
+            Rate: 1
+          - Index: 49
+            Item: C_Costume_2340
+            Rate: 1
+          - Index: 50
+            Item: C_Costume_2341
+            Rate: 1
+          - Index: 51
+            Item: C_Costume_2342
+            Rate: 1
+          - Index: 52
+            Item: C_Costume_2343
+            Rate: 1
+          - Index: 53
+            Item: C_Costume_2347
+            Rate: 1
+          - Index: 54
+            Item: C_Costume_2348
+            Rate: 1
+          - Index: 55
+            Item: C_Costume_2350
+            Rate: 1
+          - Index: 56
+            Item: C_Costume_2351
+            Rate: 1
+          - Index: 57
+            Item: C_Costume_2358
+            Rate: 1
+          - Index: 58
+            Item: C_Costume_2359
+            Rate: 1
+          - Index: 59
+            Item: C_Costume_2364
+            Rate: 1
+          - Index: 60
+            Item: C_Costume_2366
+            Rate: 1
+          - Index: 61
+            Item: C_Costume_2367
+            Rate: 1
+          - Index: 62
+            Item: C_Costume_2371
+            Rate: 1
+          - Index: 63
+            Item: C_Costume_2372
+            Rate: 1
+          - Index: 64
+            Item: C_Costume_2374
+            Rate: 1
+          - Index: 65
+            Item: C_Costume_2375
+            Rate: 1
+          - Index: 66
+            Item: C_Costume_2376
+            Rate: 1
+          - Index: 67
+            Item: C_Costume_2377
+            Rate: 1
+          - Index: 68
+            Item: C_Costume_2378
+            Rate: 1
+          - Index: 69
+            Item: C_Costume_2380
+            Rate: 1
+          - Index: 70
+            Item: C_Costume_2381
+            Rate: 1
+          - Index: 71
+            Item: C_Costume_2382
+            Rate: 1
+          - Index: 72
+            Item: C_Costume_2383
+            Rate: 1
+          - Index: 73
+            Item: C_Costume_2385
+            Rate: 1
+          - Index: 74
+            Item: C_Costume_2387
+            Rate: 1
+          - Index: 75
+            Item: C_Costume_2390
+            Rate: 1
+          - Index: 76
+            Item: C_Costume_2391
+            Rate: 1
+          - Index: 77
+            Item: C_Costume_2392
+            Rate: 1
+          - Index: 78
+            Item: C_Costume_2393
+            Rate: 1
+          - Index: 79
+            Item: C_Costume_2394
+            Rate: 1
+          - Index: 80
+            Item: C_Costume_2398
+            Rate: 1
+          - Index: 81
+            Item: C_Costume_2399
+            Rate: 1
+          - Index: 82
+            Item: C_Costume_2400
+            Rate: 1
+          - Index: 83
+            Item: C_Costume_2401
+            Rate: 1
+          - Index: 84
+            Item: C_Costume_2402
+            Rate: 1
+          - Index: 85
+            Item: C_Costume_2403
+            Rate: 1
+          - Index: 86
+            Item: C_Costume_2405
+            Rate: 1
+          - Index: 87
+            Item: C_Costume_2406
+            Rate: 1
+          - Index: 88
+            Item: C_Costume_2407
+            Rate: 1
+          - Index: 89
+            Item: C_Costume_2408
+            Rate: 1
+          - Index: 90
+            Item: C_Costume_2409
+            Rate: 1
+          - Index: 91
+            Item: C_Costume_2415
+            Rate: 1
+          - Index: 92
+            Item: C_Costume_2416
+            Rate: 1
+          - Index: 93
+            Item: C_Costume_2419
+            Rate: 1
+          - Index: 94
+            Item: C_Costume_2424
+            Rate: 1
+          - Index: 95
+            Item: C_Costume_2427
+            Rate: 1
+          - Index: 96
+            Item: C_Costume_2432
+            Rate: 1
+          - Index: 97
+            Item: C_Costume_2434
+            Rate: 1
+          - Index: 98
+            Item: C_Costume_2441
+            Rate: 1
+          - Index: 99
+            Item: C_Costume_2448
+            Rate: 1
+          - Index: 100
+            Item: C_Costume_2486
+            Rate: 1
+  - Group: VIP2
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Drops_Card
+            Rate: 10
+  - Group: VIP3
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Drops_Card
+            Rate: 10
+  - Group: HAIR1
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Costume_2029
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2030
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2031
+            Rate: 10
+          - Index: 4
+            Item: C_Costume_2032
+            Rate: 10
+          - Index: 5
+            Item: C_Costume_2033
+            Rate: 10
+          - Index: 6
+            Item: C_Costume_2034
+            Rate: 10
+          - Index: 7
+            Item: C_Costume_2035
+            Rate: 10
+          - Index: 8
+            Item: C_Costume_2036
+            Rate: 10
+          - Index: 9
+            Item: C_Costume_2037
+            Rate: 10
+          - Index: 10
+            Item: C_Costume_2038
+            Rate: 10
+  - Group: HAIR2
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Costume_2027
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2028
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2039
+            Rate: 10
+          - Index: 4
+            Item: C_Costume_2040
+            Rate: 10
+          - Index: 5
+            Item: C_Costume_2041
+            Rate: 10
+          - Index: 6
+            Item: C_Costume_2042
+            Rate: 10
+          - Index: 7
+            Item: C_Costume_2043
+            Rate: 10
+          - Index: 8
+            Item: C_Costume_2044
+            Rate: 10
+          - Index: 9
+            Item: C_Costume_2045
+            Rate: 10
+          - Index: 10
+            Item: C_Costume_2046
+            Rate: 10
+  - Group: HAIR3
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Costume_2047
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2048
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2049
+            Rate: 10
+          - Index: 4
+            Item: C_Costume_2050
+            Rate: 10
+          - Index: 5
+            Item: C_Costume_2051
+            Rate: 10
+          - Index: 6
+            Item: C_Costume_2052
+            Rate: 10
+          - Index: 7
+            Item: C_Costume_2053
+            Rate: 10
+          - Index: 8
+            Item: C_Costume_2054
+            Rate: 10
+          - Index: 9
+            Item: C_Costume_2084
+            Rate: 10
+          - Index: 10
+            Item: C_Costume_2124
+            Rate: 10
+  - Group: HAIR4
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Costume_2062
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2063
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2064
+            Rate: 10
+          - Index: 4
+            Item: C_Costume_2065
+            Rate: 10
+          - Index: 5
+            Item: C_Costume_2066
+            Rate: 10
+          - Index: 6
+            Item: C_Costume_2067
+            Rate: 10
+          - Index: 7
+            Item: C_Costume_2068
+            Rate: 10
+          - Index: 8
+            Item: C_Costume_2069
+            Rate: 10
+          - Index: 9
+            Item: C_Costume_2070
+            Rate: 10
+          - Index: 10
+            Item: C_Costume_2081
+            Rate: 10
+  - Group: HAIR5
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Costume_2071
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2072
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2073
+            Rate: 10
+          - Index: 4
+            Item: C_Costume_2074
+            Rate: 10
+          - Index: 5
+            Item: C_Costume_2106
+            Rate: 10
+          - Index: 6
+            Item: C_Costume_2107
+            Rate: 10
+          - Index: 7
+            Item: C_Costume_2108
+            Rate: 10
+          - Index: 8
+            Item: C_Costume_2109
+            Rate: 10
+          - Index: 9
+            Item: C_Costume_2110
+            Rate: 10
+          - Index: 10
+            Item: C_Costume_2111
+            Rate: 10
+  - Group: HAIR6
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Costume_2115
+            Rate: 10
+          - Index: 2
+            Item: C_Costume_2131
+            Rate: 10
+          - Index: 3
+            Item: C_Costume_2139
+            Rate: 10
+          - Index: 4
+            Item: C_Costume_2155
+            Rate: 10
+          - Index: 5
+            Item: C_Costume_2164
+            Rate: 10
+          - Index: 6
+            Item: C_Costume_2166
+            Rate: 10
+          - Index: 7
+            Item: C_Costume_2167
+            Rate: 10
+          - Index: 8
+            Item: C_Costume_2168
+            Rate: 10
+          - Index: 9
+            Item: C_Costume_2180
+            Rate: 10
+          - Index: 10
+            Item: C_Costume_2181
+            Rate: 10
+  - Group: CBTOP1
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Valkyrie_Circlet
+            Rate: 10
+          - Index: 2
+            Item: C_Classical_Fhat
+            Rate: 10
+          - Index: 3
+            Item: C_Hair_Of_The_Strong
+            Rate: 10
+          - Index: 4
+            Item: C_CatEars_Cyber_HeadP_R
+            Rate: 10
+          - Index: 5
+            Item: C_Melon_Cap
+            Rate: 10
+          - Index: 6
+            Item: C_S_Circlet_Of_Time
+            Rate: 10
+          - Index: 7
+            Item: C_Tare_Neko_Cru
+            Rate: 10
+          - Index: 8
+            Item: C_Lord_of_Death
+            Rate: 10
+          - Index: 9
+            Item: C_Holy_Marching_Hat_J
+            Rate: 10
+          - Index: 10
+            Item: C_Elder_Crown
+            Rate: 10
+  - Group: CBTOP2
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Yellow_Hat
+            Rate: 10
+          - Index: 2
+            Item: Singing_Bird
+            Rate: 10
+          - Index: 3
+            Item: Rainbow
+            Rate: 10
+          - Index: 4
+            Item: Lightning_Cloud
+            Rate: 10
+          - Index: 5
+            Item: Rain_Cloud
+            Rate: 10
+          - Index: 6
+            Item: C_Ancient_Horns
+            Rate: 10
+          - Index: 7
+            Item: C_Coppola
+            Rate: 10
+          - Index: 8
+            Item: C_Saint_Frill_Ribbon
+            Rate: 10
+          - Index: 9
+            Item: C_Honeybee_Hat
+            Rate: 10
+          - Index: 10
+            Item: C_Aura_Quartz_Crown
+            Rate: 10
+  - Group: CBTOP3
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Charlie_Hat
+            Rate: 10
+          - Index: 2
+            Item: Mini_Crown1
+            Rate: 10
+          - Index: 3
+            Item: C_Gryphon_Hat
+            Rate: 10
+          - Index: 4
+            Item: C_Reginleif_Hairband
+            Rate: 10
+          - Index: 5
+            Item: C_Heart_Wing_Hairband
+            Rate: 10
+          - Index: 6
+            Item: C_Poring_Fedora_Hat
+            Rate: 10
+          - Index: 7
+            Item: C_Tiraya_Bonnet
+            Rate: 10
+          - Index: 8
+            Item: C_Minstrel_Hat
+            Rate: 10
+          - Index: 9
+            Item: C_Vacation_Hat
+            Rate: 10
+          - Index: 10
+            Item: C_Gothic_Head_Dress
+            Rate: 10
+  - Group: CBTOP4
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Sacred_Torch_Coronet
+            Rate: 10
+          - Index: 2
+            Item: C_Rabbit_Ear_Knit_Hat
+            Rate: 10
+          - Index: 3
+            Item: C_Cowboy_Hat_J
+            Rate: 10
+          - Index: 4
+            Item: C_Lolita_Ten_Gallon_Hat
+            Rate: 10
+          - Index: 5
+            Item: C_Pecopeco_Cap
+            Rate: 10
+          - Index: 6
+            Item: C_Yellow_Doogun
+            Rate: 10
+          - Index: 7
+            Item: C_Flying_Angel
+            Rate: 10
+          - Index: 8
+            Item: C_Knit_Cap_Of_Water
+            Rate: 10
+          - Index: 9
+            Item: C_Silk_Hat_Of_Earth
+            Rate: 10
+          - Index: 10
+            Item: C_Snow_Rabbit_Knit_Hat
+            Rate: 10
+  - Group: CBTOP5
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Beer_Hat
+            Rate: 10
+          - Index: 2
+            Item: C_Hunting_Cap_Of_Gust
+            Rate: 10
+          - Index: 3
+            Item: C_Dragon_Turtle_Hat
+            Rate: 10
+          - Index: 4
+            Item: C_Bullock_Helm_J
+            Rate: 10
+          - Index: 5
+            Item: C_Dragon_Skull
+            Rate: 10
+          - Index: 6
+            Item: C_Sword_Master_Crown
+            Rate: 10
+          - Index: 7
+            Item: C_Alpaca_Hood
+            Rate: 10
+          - Index: 8
+            Item: C_12_Anniversary_Crown_Of_Saint
+            Rate: 10
+          - Index: 9
+            Item: C_Husky_Hat
+            Rate: 10
+          - Index: 10
+            Item: C_Fate_Of_Black_Hand
+            Rate: 10
+  - Group: CBTOP6
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Firinto_Scarf
+            Rate: 10
+          - Index: 2
+            Item: C_Buddhist_Priest_Crown
+            Rate: 10
+          - Index: 3
+            Item: C_Pray_Cherry_Blossom
+            Rate: 10
+          - Index: 4
+            Item: C_Wind_Of_The_Prairie
+            Rate: 10
+          - Index: 5
+            Item: C_AFK_Hat
+            Rate: 10
+          - Index: 6
+            Item: C_Sales_Signboard
+            Rate: 10
+          - Index: 7
+            Item: C_Black_Rabbit_Bonnet
+            Rate: 10
+          - Index: 8
+            Item: C_Fox_Ears_Bell_Ribbon
+            Rate: 10
+          - Index: 9
+            Item: C_Penguin_Cap
+            Rate: 10
+          - Index: 10
+            Item: C_Soft_Sheep_Hat
+            Rate: 10
+  - Group: CBMID1
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Box_HAIR1
+            Rate: 10
+          - Index: 2
+            Item: Box_HAIR2
+            Rate: 10
+          - Index: 3
+            Item: C_Moon_Eyepatch
+            Rate: 10
+          - Index: 4
+            Item: Butterfly_Wing_Ear
+            Rate: 10
+          - Index: 5
+            Item: Nut_On_Head
+            Rate: 10
+          - Index: 6
+            Item: C_Devil_Whisper
+            Rate: 10
+          - Index: 7
+            Item: C_Tomboy_Fairy
+            Rate: 10
+          - Index: 8
+            Item: C_Observer
+            Rate: 10
+          - Index: 9
+            Item: C_Machoman_Glasses
+            Rate: 10
+          - Index: 10
+            Item: C_Ancient_Elven_Ear
+            Rate: 10
+  - Group: CBMID2
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Box_HAIR3
+            Rate: 10
+          - Index: 2
+            Item: Box_HAIR4
+            Rate: 10
+          - Index: 3
+            Item: Heart_Eye_Patch1
+            Rate: 10
+          - Index: 4
+            Item: C_Red_Glasses
+            Rate: 10
+          - Index: 5
+            Item: C_Peco_Ears
+            Rate: 10
+          - Index: 6
+            Item: C_Round_Eyes
+            Rate: 10
+          - Index: 7
+            Item: C_Under_Rim_Glasses
+            Rate: 10
+          - Index: 8
+            Item: C_Mermaid_Headphone
+            Rate: 10
+          - Index: 9
+            Item: C_Eagle_Eyes
+            Rate: 10
+          - Index: 10
+            Item: C_C_Tower_Manager_Incom
+            Rate: 10
+  - Group: CBMID3
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Box_HAIR5
+            Rate: 10
+          - Index: 2
+            Item: Box_HAIR6
+            Rate: 10
+          - Index: 3
+            Item: Heart_Eye_Patch2
+            Rate: 10
+          - Index: 4
+            Item: C_Blush
+            Rate: 10
+          - Index: 5
+            Item: C_Takius_Blindfold
+            Rate: 10
+          - Index: 6
+            Item: C_Wings_Of_Victory
+            Rate: 10
+          - Index: 7
+            Item: C_Black_Glasses
+            Rate: 10
+          - Index: 8
+            Item: C_Filir_Wing_Ears
+            Rate: 10
+          - Index: 9
+            Item: C_Cat_Eye
+            Rate: 10
+          - Index: 10
+            Item: C_Blind_Glasses
+            Rate: 10
+  - Group: CBMID4
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Fin_Helm
+            Rate: 10
+          - Index: 2
+            Item: C_Small_Golden_Wings
+            Rate: 10
+          - Index: 3
+            Item: C_Shelter_Wing_Ears
+            Rate: 10
+          - Index: 4
+            Item: C_YinYang_Earring
+            Rate: 10
+          - Index: 5
+            Item: C_Elf_Ears
+            Rate: 10
+          - Index: 6
+            Item: C_Heart_Eyebandage
+            Rate: 10
+          - Index: 7
+            Item: C_Ifrit_Ear
+            Rate: 10
+          - Index: 8
+            Item: C_Ice_Wing_Ear
+            Rate: 10
+          - Index: 9
+            Item: C_One_Eyed_Glasses
+            Rate: 10
+          - Index: 10
+            Item: C_3D_Glasses
+            Rate: 10
+  - Group: CBMID5
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Mouton_Life
+            Rate: 10
+          - Index: 2
+            Item: C_Rainbow_Wing_Ears
+            Rate: 10
+          - Index: 3
+            Item: C_Wing_Form_Spectacle
+            Rate: 10
+          - Index: 4
+            Item: C_Robo_Eye
+            Rate: 10
+          - Index: 5
+            Item: C_Angel_Spirit
+            Rate: 10
+          - Index: 6
+            Item: C_Bell_Pigeon
+            Rate: 10
+          - Index: 7
+            Item: C_Hexagon_Spectacles
+            Rate: 10
+          - Index: 8
+            Item: C_There_Is_Something
+            Rate: 10
+          - Index: 9
+            Item: C_Scratching_Cat
+            Rate: 10
+          - Index: 10
+            Item: C_Black_Devil_Mask
+            Rate: 10
+  - Group: CBMID6
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Eyes_Of_Ifrit
+            Rate: 10
+          - Index: 2
+            Item: C_Love_Cheek
+            Rate: 10
+          - Index: 3
+            Item: C_Gryphon_Wing_Ears
+            Rate: 10
+          - Index: 4
+            Item: C_Under_Rim_Glasses_Red
+            Rate: 10
+          - Index: 5
+            Item: C_Poring_Sunglasses
+            Rate: 10
+          - Index: 6
+            Item: C_Happy_Lunatic_Ear
+            Rate: 10
+          - Index: 7
+            Item: C_Face_Crusher
+            Rate: 10
+          - Index: 8
+            Item: C_Magical_Booster
+            Rate: 10
+          - Index: 9
+            Item: C_Barons_Evil_Eye
+            Rate: 10
+          - Index: 10
+            Item: C_New_Wave_Sunglasses
+            Rate: 10
+  - Group: CBLOW1
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Luna_On_Shoulder
+            Rate: 10
+          - Index: 2
+            Item: Chicken_Beak
+            Rate: 10
+          - Index: 3
+            Item: Charlie_Beard
+            Rate: 10
+          - Index: 4
+            Item: C_Romantic_White_Flower
+            Rate: 10
+          - Index: 5
+            Item: C_Samurai_Mask
+            Rate: 10
+          - Index: 6
+            Item: C_Pirate_Dagger
+            Rate: 10
+          - Index: 7
+            Item: C_Gang_Scarf
+            Rate: 10
+          - Index: 8
+            Item: C_Ninja_Scroll
+            Rate: 10
+          - Index: 9
+            Item: C_Poring_Letter
+            Rate: 10
+          - Index: 10
+            Item: C_Sweet_Candy
+            Rate: 10
+  - Group: CBLOW2
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Lucky_Clover
+            Rate: 10
+          - Index: 2
+            Item: C_Scarlet_Rose
+            Rate: 10
+          - Index: 3
+            Item: C_Monster_Card
+            Rate: 10
+          - Index: 4
+            Item: C_Sake
+            Rate: 10
+          - Index: 5
+            Item: C_Granpa_Beard
+            Rate: 10
+          - Index: 6
+            Item: C_Taboo_Curse_Scroll
+            Rate: 10
+          - Index: 7
+            Item: C_Ifrits_Breath
+            Rate: 10
+          - Index: 8
+            Item: C_Bubble_Gum_in_Mouth
+            Rate: 10
+          - Index: 9
+            Item: C_Chilly_Breath
+            Rate: 10
+          - Index: 10
+            Item: Lincoln_Beard
+            Rate: 10
+  - Group: CBLOW3
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Love_Piece
+            Rate: 10
+          - Index: 2
+            Item: C_Donut_in_Mouth
+            Rate: 10
+          - Index: 3
+            Item: C_Choco_Donut_in_Mouth
+            Rate: 10
+          - Index: 4
+            Item: C_Jack_Castle_Bat
+            Rate: 10
+          - Index: 5
+            Item: C_Miracle_Blue_Rose
+            Rate: 10
+          - Index: 6
+            Item: C_Red_Cherry_Blossom
+            Rate: 10
+          - Index: 7
+            Item: C_Worg_In_Mouth
+            Rate: 10
+          - Index: 8
+            Item: C_Fish_In_Mouth
+            Rate: 10
+          - Index: 9
+            Item: C_Subject_Aura
+            Rate: 10
+          - Index: 10
+            Item: C_Wind_Fan
+            Rate: 10
+  - Group: CBLOW4
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Fan_in_Mouth
+            Rate: 10
+          - Index: 2
+            Item: C_Long_Tongue
+            Rate: 10
+          - Index: 3
+            Item: C_Green_Foxtail
+            Rate: 10
+          - Index: 4
+            Item: C_Foxtail
+            Rate: 10
+          - Index: 5
+            Item: C_Frozen_Land_Rose
+            Rate: 10
+          - Index: 6
+            Item: C_Large_Ribbon_Muffler
+            Rate: 10
+          - Index: 7
+            Item: C_Pink_Clover
+            Rate: 10
+          - Index: 8
+            Item: C_Blood_Sucker
+            Rate: 10
+          - Index: 9
+            Item: C_Cheering_Whistle
+            Rate: 10
+          - Index: 10
+            Item: C_Well-Chewed_Pencil
+            Rate: 10
+  - Group: CBLOW5
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_NettyHeart_BalloonGum
+            Rate: 10
+          - Index: 2
+            Item: C_CD_in_Mouth
+            Rate: 10
+          - Index: 3
+            Item: C_Sailor_Collar
+            Rate: 10
+          - Index: 4
+            Item: C_Piamette_BowTie_Red
+            Rate: 10
+          - Index: 5
+            Item: C_Silent_Executor
+            Rate: 10
+          - Index: 6
+            Item: C_Ichthys_Rosario
+            Rate: 10
+          - Index: 7
+            Item: C_Eremes_Scarf
+            Rate: 10
+          - Index: 8
+            Item: C_Subject_Aura_Red
+            Rate: 10
+          - Index: 9
+            Item: C_Abacus_In_Mouth
+            Rate: 10
+          - Index: 10
+            Item: C_Tone_of_Gold
+            Rate: 10
+  - Group: CBLOW6
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Large_Ribbon_Muffler_Red
+            Rate: 10
+          - Index: 2
+            Item: C_Cat_Ears_Cape
+            Rate: 10
+          - Index: 3
+            Item: C_Umbala_Spirit
+            Rate: 10
+          - Index: 4
+            Item: C_Pig_Nose
+            Rate: 10
+          - Index: 5
+            Item: C_Blue_Rear_Ribbon
+            Rate: 10
+          - Index: 6
+            Item: C_Poring_Soap_Pipe
+            Rate: 10
+          - Index: 7
+            Item: C_Eremes_Scarf_Black
+            Rate: 10
+          - Index: 8
+            Item: C_Dwarf_Beard
+            Rate: 10
+          - Index: 9
+            Item: C_Under_Lamp
+            Rate: 10
+          - Index: 10
+            Item: C_Stall_Of_Bat
+            Rate: 10
+  - Group: CBGAR1
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Garment_1
+            Rate: 10
+          - Index: 2
+            Item: C_Garment_3
+            Rate: 10
+          - Index: 3
+            Item: C_Garment_5
+            Rate: 10
+          - Index: 4
+            Item: C_Garment_6
+            Rate: 10
+          - Index: 5
+            Item: C_Garment_8
+            Rate: 10
+          - Index: 6
+            Item: C_Garment_9
+            Rate: 10
+          - Index: 7
+            Item: C_Garment_10
+            Rate: 10
+          - Index: 8
+            Item: C_Garment_11
+            Rate: 10
+          - Index: 9
+            Item: C_Garment_12
+            Rate: 10
+          - Index: 10
+            Item: C_Garment_14
+            Rate: 10
+  - Group: CBGAR2
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Garment_15
+            Rate: 10
+          - Index: 2
+            Item: C_Garment_2
+            Rate: 10
+          - Index: 3
+            Item: C_Garment_18
+            Rate: 10
+          - Index: 4
+            Item: C_Garment_33
+            Rate: 10
+          - Index: 5
+            Item: C_Garment_19
+            Rate: 10
+          - Index: 6
+            Item: C_Garment_34
+            Rate: 10
+          - Index: 7
+            Item: C_Garment_42
+            Rate: 10
+          - Index: 8
+            Item: C_Garment_46
+            Rate: 10
+          - Index: 9
+            Item: C_Garment_48
+            Rate: 10
+          - Index: 10
+            Item: C_Garment_54
+            Rate: 10
+  - Group: CBGAR3
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Garment_16
+            Rate: 10
+          - Index: 2
+            Item: C_Garment_4
+            Rate: 10
+          - Index: 3
+            Item: C_Garment_25
+            Rate: 10
+          - Index: 4
+            Item: C_Garment_26
+            Rate: 10
+          - Index: 5
+            Item: C_Garment_27
+            Rate: 10
+          - Index: 6
+            Item: C_Garment_60
+            Rate: 10
+          - Index: 7
+            Item: C_Garment_63
+            Rate: 10
+          - Index: 8
+            Item: C_Garment_80
+            Rate: 10
+          - Index: 9
+            Item: C_Garment_81
+            Rate: 10
+          - Index: 10
+            Item: C_Garment_98
+            Rate: 10
+  - Group: CBGAR4
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Garment_17
+            Rate: 10
+          - Index: 2
+            Item: C_Garment_24
+            Rate: 10
+          - Index: 3
+            Item: C_Garment_37
+            Rate: 10
+          - Index: 4
+            Item: C_Garment_55
+            Rate: 10
+          - Index: 5
+            Item: C_Garment_56
+            Rate: 10
+          - Index: 6
+            Item: C_Garment_57
+            Rate: 10
+          - Index: 7
+            Item: C_Garment_88
+            Rate: 10
+          - Index: 8
+            Item: C_Garment_139
+            Rate: 10
+          - Index: 9
+            Item: C_Garment_155
+            Rate: 10
+          - Index: 10
+            Item: C_Garment_154
+            Rate: 10
+  - Group: CBGAR5
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Garment_149
+            Rate: 10
+          - Index: 2
+            Item: C_Garment_53
+            Rate: 10
+          - Index: 3
+            Item: C_Garment_68
+            Rate: 10
+          - Index: 4
+            Item: C_Garment_79
+            Rate: 10
+          - Index: 5
+            Item: C_Garment_97
+            Rate: 10
+          - Index: 6
+            Item: C_Garment_108
+            Rate: 10
+          - Index: 7
+            Item: C_Garment_114
+            Rate: 10
+          - Index: 8
+            Item: C_Garment_125
+            Rate: 10
+          - Index: 9
+            Item: C_Garment_127
+            Rate: 10
+          - Index: 10
+            Item: C_Garment_146
+            Rate: 10
+  - Group: CBGAR6
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: C_Garment_62
+            Rate: 10
+          - Index: 2
+            Item: C_Garment_64
+            Rate: 10
+          - Index: 3
+            Item: C_Garment_65
+            Rate: 10
+          - Index: 4
+            Item: C_Garment_67
+            Rate: 10
+          - Index: 5
+            Item: C_Garment_69
+            Rate: 10
+          - Index: 6
+            Item: C_Garment_87
+            Rate: 10
+          - Index: 7
+            Item: C_Garment_90
+            Rate: 10
+          - Index: 8
+            Item: C_Garment_92
+            Rate: 10
+          - Index: 9
+            Item: C_Garment_117
+            Rate: 10
+          - Index: 10
+            Item: C_Garment_123
+            Rate: 10
+  - Group: WoE_Support_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 1
+            Item: Old_Card_Album
+            Rate: 48
+          - Index: 2
+            Item: Union_Of_Tribe
+            Rate: 48
+          - Index: 3
+            Item: Bloody_Dead_Branch
+            Rate: 48
+          - Index: 4
+            Item: Frost_Giant_Blood
+            Rate: 48
+          - Index: 5
+            Item: Golem_Stone
+            Rate: 48
+          - Index: 6
+            Item: Elf_Tear_Stun
+            Rate: 195
+          - Index: 7
+            Item: Elf_Tear_Stone_Curse
+            Rate: 195
+          - Index: 8
+            Item: Elf_Tear_Freezing
+            Rate: 195
+          - Index: 9
+            Item: Elf_Tear_Sleep
+            Rate: 195
+          - Index: 10
+            Item: Elf_Tear_Curse
+            Rate: 195
+          - Index: 11
+            Item: Elf_Tear_Silence
+            Rate: 195
+          - Index: 12
+            Item: Elf_Tear_Blind
+            Rate: 195
+          - Index: 13
+            Item: Snow_Flip
+            Rate: 341
+          - Index: 14
+            Item: Peony_Mommy
+            Rate: 341
+          - Index: 15
+            Item: Slapping_Herb
+            Rate: 341
+          - Index: 16
+            Item: Yggdrasil_Dust
+            Rate: 341
+          - Index: 17
+            Item: Sg_Violet_Potion_Box
+            Rate: 1365
+          - Index: 18
+            Item: Sg_White_Potion_Box
+            Rate: 1365
+          - Index: 19
+            Item: Sg_Blue_Potion_Box
+            Rate: 1365
+          - Index: 20
+            Item: Old_Blue_Box
+            Rate: 1463
+          - Index: 21
+            Item: Old_Violet_Box
+            Rate: 1463
